@@ -10,12 +10,13 @@ class Solution:
                 if grid[i][j] == 1:
                     rowsc[i] += 1
                     colsc[j] += 1
-        
-        servers = 0
+    
+        s = 0
 
         for i in range(rows):
             for j in range(cols):
                 if grid[i][j] == 1 and max(rowsc[i], colsc[j]) > 1:
-                    servers += 1
+                    s += 1
         
-        return servers
+        return s
+                
