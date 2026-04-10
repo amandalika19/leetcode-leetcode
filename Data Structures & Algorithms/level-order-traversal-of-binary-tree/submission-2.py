@@ -20,6 +20,8 @@ class Solution:
             res[d].append(n.val)
             dfs(n.left, d + 1)
             dfs(n.right, d + 1)
+            
+
 
         dfs(root, 0)
         return res
