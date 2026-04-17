@@ -10,18 +10,17 @@ class Solution:
         
         res = []
 
-        def dfs(root, d):
+        def dfs(root, depth):
 
             if not root:
-                return None
+                return 0
             
-            if len(res) == d:
+            if len(res) == depth:
                 res.append([])
-
-            res[d].append(root.val)
-            dfs(root.left, d + 1)
-            dfs(root.right, d + 1)
-
-
+            
+            res[depth].append(root.val)
+            dfs(root.left, depth + 1)
+            dfs(root.right, depth + 1)
+        
         dfs(root, 0)
         return res
